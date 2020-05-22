@@ -1,0 +1,17 @@
+@mixin scrollbar($scolor, $track) {
+  &::-webkit-scrollbar-track
+  {
+    background-color: lighten($track, 10%);
+  }
+
+  &::-webkit-scrollbar
+  {
+    width: 6px;
+    background-color: lighten($scolor, 30%);
+  }
+
+  &::-webkit-scrollbar-thumb
+  {
+    background-color: lighten($scolor, 30%);
+  }
+}

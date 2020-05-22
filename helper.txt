@@ -1,0 +1,3 @@
+https://github.com/petr166/mean-chat-app/tree/master/angular-src/src/environments
+
+https://github.com/kk1169/easyApp

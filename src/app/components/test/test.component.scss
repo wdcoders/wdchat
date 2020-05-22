@@ -1,0 +1,32 @@
+.test-chats-wrapper{
+
+  .test-chats-users{
+    margin:0;
+    padding:0;
+    width:100%;
+
+    li{
+      list-style: none;
+      height: 40px;
+      padding-left:15px;
+      padding-right: 15px;
+      line-height: 40px;
+      margin-bottom: 2px;
+      background: #f2f2f2;
+      cursor: pointer;
+
+      &:hover, &:focus{
+        background: #ddd;
+      }
+    }
+  }
+
+  .test-chats-wrapper-r{
+    border-left:1px solid #ddd;
+
+    .test-chats{
+      height: 300px;
+    }
+  }
+
+}

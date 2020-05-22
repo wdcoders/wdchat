@@ -1,0 +1,87 @@
+<!--
+<input type="text" [(ngModel)]="userName"/>
+<button class="btn btn-primary" (click)="connectToChat()">Add</button>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <ul>
+        <li *ngFor="let u of AllUsers">{{u}}</li>
+      </ul>
+    </div>
+    <div class="col-lg-9">
+      <div class="test-messages">
+        <ul>
+          <li *ngFor="let a of AllMessages">{{a}}</li>
+        </ul>
+      </div>
+      <input type="text" [(ngModel)]="newMessage"/>
+      <button class="btn btn-primary" (click)="SendMessage()">Send</button>
+    </div>
+  </div>
+</div> -->
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-lg-5">
+      <label>User Name</label>
+      <input type="text" [(ngModel)]="user" placeholder="User Name" class="form-control"/>
+    </div>
+    <div class="col-lg-5">
+      <label>Chooose Room</label>
+      <select class="form-control" [(ngModel)]="room">
+        <option value="Angular">Angular</option>
+        <option value="Javascript">Javascript</option>
+        <option value="Mongo">Mongo</option>
+      </select>
+    </div>
+    <div class="col-lg-2">
+      <button class="btn btn-secondary float-right" style="margin-top:32px;" (click)="LeaveRoom()">Leave</button>
+      <button class="btn btn-primary mr-1 float-right" style="margin-top:32px;" (click)="AddUser()">Join</button>
+    </div>
+    <div class="col-lg-12">
+      <ul>
+        <!-- <li *ngFor="let m of message">
+          {{m.user}} : {{m.message}}
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="container test-chats-wrapper">
+  <div class="row">
+    <div class="col-lg-3">
+      <ul class="test-chats-users">
+        <li *ngFor="let u of users" (click)="OnSelectUser(u)">{{u.user}}</li>
+      </ul>
+    </div>
+    <div class="col-lg-9 test-chats-wrapper-r">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="test-chats">
+            <ul>
+              <li *ngFor="let m of message">
+                {{m.user}} : {{m.message}}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-11">
+              <input type="text" [(ngModel)]="messageText" placeholder="Write message here..." class="form-control"/>
+            </div>
+            <div class="col-lg-1">
+              <button class="btn btn-primary" (click)="SMessage()">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

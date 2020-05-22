@@ -1,0 +1,300 @@
+@import './font.scss';
+@import './settings.scss';
+@import '../plugins/bootstrap/scss/functions';
+@import '../plugins/bootstrap/scss/bootstrap.scss';
+@import './mixins.scss';
+
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Roboto', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+
+
+/**
+ *
+ * WD WRAPPER
+ *
+ */
+.wd-wrapper{
+  width:100vw;
+  height: 100vh;
+  display: flex;
+}
+
+
+/**
+ *
+ * WD MAIN NAV
+ *
+ */
+.wd-main-navbar{
+  width: $wdMainNav;
+  height: 100vh;
+  display: flex;
+  border-right:1px solid #ddd;
+  flex-direction: column;
+
+  .wd-main-navbar-logo{
+    height: 120px;
+    display: inline-flex;
+    border-bottom:1px solid #ddd;
+  }
+
+  .wd-main-navbar-nav{
+    height: calc(100vh - 120px);
+    display: inline-flex;
+    border-bottom:1px solid #ddd;
+    overflow-y: auto;
+    justify-content: center;
+    @include scrollbar($primary, $gray-400);
+
+    ul{
+      margin:0;
+      padding:0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      li{
+        list-style: none;
+        display: inline-flex;
+        padding-top: 25px;
+
+        &:last-child{
+          padding-bottom: 25px;
+        }
+
+        a{
+          display: flex;
+          width:45px;
+          height: 45px;
+          background: $gray-200;
+          color:#333;
+          justify-content: center;
+          align-items: center;
+          border-radius: 100%;
+          text-decoration: none;
+
+          &:hover, &:focus{
+            background: $gray-300;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/**
+ *
+ * WD DYNAMIC SIDEBAR
+ *
+ */
+.wd-dynamic-sidebar{
+  width:$wdDynamicSidebar;
+  height: 100vh;
+  display: flex;
+  border-right:1px solid #ddd;
+}
+
+
+/**
+ *
+ * WD MESSAGES
+ *
+ */
+.wd-messages{
+  width:$wdMessages;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .wd-messages-header{
+    width:100%;
+    height:80px;
+    background-color: white;
+    border-bottom:1px solid #ddd;
+  }
+
+  .wd-messages-input{
+    display: flex;
+    width:100%;
+    height:80px;
+    background-color: white;
+    border-top:1px solid #ddd;
+    padding-left:20px;
+    padding-right: 20px;
+    align-items: center;
+
+    .wd-message-input-inner{
+      width:100%;
+      display: inline-flex;
+
+      .wd-message-outline-btn{
+        display: flex;
+        width:45px;
+        height: 45px;
+        background: $gray-200;
+        color:#333;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        text-decoration: none;
+
+        &:hover, &:focus{
+          background: $gray-300;
+        }
+      }
+
+      .wd-message-input-field{
+        width: calc(100% - 289px);
+        border:none;
+
+        &:hover, &:focus{
+          outline: 0;
+        }
+      }
+    }
+  }
+}
+
+
+/**
+ *
+ * WD MESSAGES CHATS
+ *
+ */
+.wd-messages-chats{
+  width:100%;
+  display: flex;
+  background: #fff6f1;
+  height:calc(100vh - 160px);
+  overflow-y: auto;
+  padding: 35px;
+  @include scrollbar($primary, $gray-400);
+
+  .wd-messages-chats-list{
+    display: flex;
+    margin:0;
+    padding:0;
+    width: 100%;
+    flex-direction: column;
+
+    li{
+      width: 100%;
+      list-style: none;
+      margin-bottom: 20px;
+
+      .media{
+        .media-profile{
+          width:50px;
+          height: 50px;
+          border-radius: 100%;
+          overflow: hidden;
+          box-shadow: 0 0 0px 2px $primary;
+          border: 2px solid #fff;
+        }
+
+        .media-body{
+          .media-username{
+            display: inline-block;
+            font-size: 16px;
+          }
+          .media-time{
+            font-size: 14px;
+            display: inline-block;
+            font-weight:normal;
+            margin-left: 2rem;
+          }
+
+          .wd-msg-box{
+            margin:0;
+            padding:0;
+
+            li{
+              list-style: none;
+              margin-bottom: 0px;
+
+              h5{
+                font-weight: normal;
+                font-size: 15px;
+                display: inline-block;
+                padding: 16px 20px;
+                background-color: $primary;
+                border-radius: 0px 25px 25px 0;
+                color: #fff;
+                line-height: 1.4;
+              }
+
+              &:first-child{
+                h5{
+                  border-radius: 25px 25px 25px 0;
+                }
+              }
+              &:last-child{
+                h5{
+                  border-radius: 0px 25px 25px 25px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // REPLIES AREA
+      &.replies{
+        text-align: right;
+
+        .media{
+          flex-direction: row-reverse;
+
+          .wd-msg-box{
+            li{
+
+              h5{
+                border-radius: 25px 0px 0px 25px;
+              }
+
+              &:first-child{
+                h5{
+                  border-radius: 25px 25px 0px 25px;
+                }
+              }
+              &:last-child{
+                h5{
+                  border-radius: 25px 0px 25px 25px;
+                }
+              }
+
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+/**
+ *
+ * WD APP LIST
+ *
+ */
+.wd-app-list{
+  width:$wdAppList;
+  height: 100vh;
+  display: flex;
+  border-left:1px solid #ddd;
+}
